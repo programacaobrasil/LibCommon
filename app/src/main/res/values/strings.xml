@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Programação Brasil Library Common</string>
+
+    <string name="text_shared_by">Compartilhar Via</string>
+    <string name="text_confirm">Confirma</string>
+    <string name="text_cancel">Cancela</string>
+</resources>
