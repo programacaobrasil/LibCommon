@@ -19,6 +19,24 @@ class AppHelper
 
         }
 
+        fun openDevelopePage(activity: Activity, developerId: String)
+        {
+            try {
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://dev?id=$developerId")))
+            } catch (anfe: android.content.ActivityNotFoundException) {
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=$developerId")))
+            }
+        }
+
+        fun openAppsPage(activity: Activity)
+        {
+            try {
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub: Programação Brasil")))
+            } catch (anfe: android.content.ActivityNotFoundException) {
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/search?q=pub: Programação Brasil")))
+            }
+        }
+
         fun isNetworkAvaliabe(context: Context): Boolean{
             val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val info = cm.activeNetworkInfo
