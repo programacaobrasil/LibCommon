@@ -28,12 +28,12 @@ class AppHelper
             }
         }
 
-        fun openAppsPage(activity: Activity)
+        fun openAppsPage(activity: Activity, pubNameSearch: String)
         {
             try {
-                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub: Programação Brasil")))
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub: $pubNameSearch")))
             } catch (anfe: android.content.ActivityNotFoundException) {
-                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/search?q=pub: Programação Brasil")))
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/search?q=pub: $pubNameSearch")))
             }
         }
 

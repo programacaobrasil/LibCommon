@@ -122,11 +122,15 @@ class AdMobConfig {
     }
 
     fun openAdMobRewardedVideo() {
-        if (mRewardedVideoAd!=null && mRewardedVideoAd!!.isLoaded) {
+        if (mRewardedVideoAd!=null && isAdMobRewardedLoaded()) {
             mRewardedVideoAd!!.show()
         } else {
             loadAdMobRewarded()
         }
+    }
+
+    fun isAdMobRewardedLoaded(): Boolean {
+        return mRewardedVideoAd!!.isLoaded
     }
 
     private fun getAdRequest(): AdRequest {
