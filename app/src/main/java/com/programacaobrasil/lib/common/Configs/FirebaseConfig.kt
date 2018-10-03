@@ -12,10 +12,10 @@ class FirebaseConfig {
         private var firebaseAuth: FirebaseAuth? = null
         private var firebaseStorage: FirebaseStorage? = null
 
-        fun getDatabaseReference(): DatabaseReference {
+        fun getDatabaseReference(persistenceEnabled:Boolean = true): DatabaseReference {
             if (databaseReference == null) {
                 val firebaseDatabase = FirebaseDatabase.getInstance()
-                firebaseDatabase.setPersistenceEnabled(true)
+                firebaseDatabase.setPersistenceEnabled(persistenceEnabled)
 
                 databaseReference = firebaseDatabase.reference
             }
